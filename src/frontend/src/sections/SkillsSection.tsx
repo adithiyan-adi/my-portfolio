@@ -31,8 +31,8 @@ const SKILL_GROUPS: SkillGroup[] = [
     category: "Programming",
     icon: "code",
     skills: [
-      { name: "C / C++", level: 85 },
       { name: "MATLAB", level: 80 },
+      { name: "C / C++", level: 75 },
     ],
   },
   {
