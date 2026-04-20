@@ -1,0 +1,18 @@
+type Timestamp = int;
+type SubmitResult = 
+ variant {
+   err: text;
+   ok: nat;
+ };
+type ContactSubmission = 
+ record {
+   email: text;
+   id: nat;
+   message: text;
+   name: text;
+   submittedAt: Timestamp;
+ };
+service : {
+  getAllSubmissions: () -> (vec ContactSubmission) query;
+  submitContact: (name: text, email: text, message: text) -> (SubmitResult);
+}

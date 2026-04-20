@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Poppins", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.75rem;
+
+    --background: 0.975 0.01 0;
+    --foreground: 0.16 0.02 240;
+    --card: 0.98 0.005 0;
+    --card-foreground: 0.16 0.02 240;
+    --popover: 0.97 0.01 0;
+    --popover-foreground: 0.16 0.02 240;
+
+    --primary: 0.55 0.12 230;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.92 0.02 0;
+    --secondary-foreground: 0.25 0.04 240;
+    --muted: 0.92 0.02 0;
+    --muted-foreground: 0.52 0.04 240;
+
+    --accent: 0.48 0.15 180;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.58 0.21 23;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.88 0.01 0;
+    --input: 0.88 0.01 0;
+    --ring: 0.55 0.12 230;
+
+    --chart-1: 0.48 0.15 180;
+    --chart-2: 0.55 0.12 230;
+    --chart-3: 0.62 0.16 270;
+    --chart-4: 0.68 0.11 45;
+    --chart-5: 0.52 0.08 10;
+
+    --sidebar: 0.98 0.005 0;
+    --sidebar-foreground: 0.16 0.02 240;
+    --sidebar-primary: 0.55 0.12 230;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.92 0.02 0;
+    --sidebar-accent-foreground: 0.25 0.04 240;
+    --sidebar-border: 0.88 0.01 0;
+    --sidebar-ring: 0.55 0.12 230;
+
+    /* Neumorphism shadows */
+    --neu-shadow-light: -8px -8px 20px rgba(255, 255, 255, 0.85);
+    --neu-shadow-dark: 8px 8px 20px rgba(0, 0, 0, 0.06);
+    --neu-shadow-inset-light: inset -4px -4px 10px rgba(255, 255, 255, 0.7);
+    --neu-shadow-inset-dark: inset 4px 4px 10px rgba(0, 0, 0, 0.06);
+
+    /* Glass */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.4);
+  }
+
+  .dark {
+    --background: 0.12 0.01 240;
+    --foreground: 0.92 0.01 240;
+    --card: 0.16 0.01 240;
+    --card-foreground: 0.92 0.01 240;
+    --popover: 0.2 0.01 240;
+    --popover-foreground: 0.92 0.01 240;
+
+    --primary: 0.65 0.12 230;
+    --primary-foreground: 0.12 0.01 240;
+
+    --secondary: 0.2 0.01 240;
+    --secondary-foreground: 0.82 0.02 240;
+    --muted: 0.2 0.01 240;
+    --muted-foreground: 0.58 0.02 240;
+
+    --accent: 0.6 0.18 180;
+    --accent-foreground: 0.12 0.01 240;
+
+    --destructive: 0.68 0.18 20;
+    --destructive-foreground: 0.12 0.01 240;
+
+    --border: 0.26 0.01 240;
+    --input: 0.26 0.01 240;
+    --ring: 0.65 0.12 230;
+
+    --chart-1: 0.6 0.18 180;
+    --chart-2: 0.65 0.12 230;
+    --chart-3: 0.72 0.18 270;
+    --chart-4: 0.75 0.14 45;
+    --chart-5: 0.62 0.1 10;
+
+    --sidebar: 0.16 0.01 240;
+    --sidebar-foreground: 0.92 0.01 240;
+    --sidebar-primary: 0.65 0.12 230;
+    --sidebar-primary-foreground: 0.12 0.01 240;
+    --sidebar-accent: 0.2 0.01 240;
+    --sidebar-accent-foreground: 0.82 0.02 240;
+    --sidebar-border: 0.26 0.01 240;
+    --sidebar-ring: 0.65 0.12 230;
+
+    --neu-shadow-light: -8px -8px 20px rgba(255, 255, 255, 0.05);
+    --neu-shadow-dark: 8px 8px 20px rgba(0, 0, 0, 0.45);
+    --neu-shadow-inset-light: inset -4px -4px 10px rgba(255, 255, 255, 0.04);
+    --neu-shadow-inset-dark: inset 4px 4px 10px rgba(0, 0, 0, 0.35);
+
+    --glass-bg: rgba(15, 23, 42, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .neumorphic {
+    box-shadow: var(--neu-shadow-dark), var(--neu-shadow-light);
+    background: oklch(var(--card));
+  }
+
+  .neumorphic-inset {
+    box-shadow: var(--neu-shadow-inset-dark), var(--neu-shadow-inset-light);
+    background: oklch(var(--background));
+  }
+
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+
+  .chip-button {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-full font-medium text-sm transition-smooth;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05), -2px -2px 8px
+      rgba(255, 255, 255, 0.6);
+  }
+
+  .chip-button:hover {
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.08), -3px -3px 10px
+      rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+  }
+
+  .dark .chip-button {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3), -2px -2px 8px
+      rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .chip-button:hover {
+    box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.4), -3px -3px 10px
+      rgba(255, 255, 255, 0.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary)),
+      oklch(var(--accent))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--primary) / 0.08),
+      oklch(var(--accent) / 0.08)
+    );
+  }
+
+  .section-alt {
+    background: oklch(var(--muted) / 0.4);
+  }
+
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

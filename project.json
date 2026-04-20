@@ -1,0 +1,29 @@
+{
+  "overview": "A world-class interactive portfolio website for ADITHIYAN A, an Aspiring VLSI & Embedded Systems Engineer. Features 10 sections including a hero with animated circuit background, experience timeline, project showcase with filtering, animated skills, achievements, certifications, gallery, career roadmap, and contact form. Built with premium neumorphism/glassmorphism design and light/dark mode.",
+  "features": [
+    "Hero section with animated circuit background and 3 CTA buttons",
+    "About section with split layout and engineering narrative",
+    "Experience timeline with QMOS Technologies and NSIC internships",
+    "Projects showcase with filter (FPGA/IoT/AI) and modal popups",
+    "Animated skills section with progress bars and chip tags",
+    "Achievements highlight for IIT Madras PALS INNOWHA 2025",
+    "Certifications card gallery with expandable modals",
+    "Photo gallery with masonry grid and hover effects",
+    "Career vision roadmap with animated flow",
+    "Contact form with backend storage, light/dark mode toggle"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "vlsi",
+    "embedded-systems",
+    "fpga",
+    "engineering",
+    "neumorphism",
+    "glassmorphism",
+    "framer-motion",
+    "dark-mode",
+    "react"
+  ],
+  "last_updated": "2026-04-10T19:02:22.017Z"
+}
